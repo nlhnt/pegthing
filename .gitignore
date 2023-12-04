@@ -1,29 +1,7 @@
-/target
-/classes
-/checkouts
-profiles.clj
-pom.xml
-pom.xml.asc
-*.jar
-*.class
-/.lein-*
-/.nrepl-port
-/.prepl-port
-.hgignore
-.hg/
-
-
-# Created by https://www.gitignore.io/api/emacs,clojure
-
-### Clojure ###
-pom.xml
-pom.xml.asc
-*.jar
-*.class
-/lib/
-/classes/
 /target/
+/classes/
 /checkouts/
+/lib/
 .lein-deps-sum
 .lein-repl-history
 .lein-plugins/
@@ -31,8 +9,7 @@ pom.xml.asc
 .nrepl-port
 .cpcache/
 
-### Emacs ###
-# -*- mode: gitignore; -*-
+# Emacs
 *~
 \#*\#
 /.emacs.desktop
@@ -75,31 +52,40 @@ flycheck_*.el
 # projectiles files
 .projectile
 
-# End of https://www.gitignore.io/api/emacs,clojure
+# clj-kondo
 /clj-kondo
 **/.clj-kondo/.cache
-performance.txt
 clj-kondo*.snap
 .planck_cache
+.clj-kondo/clj-kondo
+.clj-kondo/rewrite-clj
+.clj-kondo/marick
+/namespace_config/.clj-kondo/inline-configs
+/.clj-kondo/inline-configs
 
 # IntelliJ
-.idea
+.idea/
 *.iml
 
+# macOS
 .DS_Store
+
+# Ignore all .jar files except those in the corpus directory
+*.jar
 !corpus/**/*.jar
+
+# Ignore corpus/java/classes/foo/bar/AwesomeClass.class
 !corpus/java/classes/foo/bar/AwesomeClass.class
+
+# Ignore IntelliJ project files in corpus directory
 corpus/config_dir/.cache
-/.clj-kondo/clj-kondo
-/.lsp/.cache
-clj-kondo.build_artifacts.txt
-/.clj-kondo/rewrite-clj
-.clj-kondo/marick
-corpus/namespace_config/.clj-kondo/inline-configs
-.lock
+corpus/.clj-kondo/clj-kondo
 corpus/.clj-kondo/inline-configs
+
+# Other project-specific ignores
+.lock
 tmp
 .eastwood
-
 .calva
 
+.lsp/.cache/
